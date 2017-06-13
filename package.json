@@ -1,0 +1,69 @@
+{
+  "name": "vscode-language-babel",
+  "displayName": "Babel JavaScript",
+  "description": "VSCode syntax highlighting for today's JavaScript, ported from gandm's language-babel for Atom.",
+  "version": "0.0.1",
+  "publisher": "mgmcdermott",
+  "engines": {
+    "vscode": "*"
+  },
+  "categories": [
+    "Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgmcdermott/vscode-language-babel/"
+  },
+  "bugs": "https://github.com/mgmcdermott/vscode-language-babel/issues",
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/mgmcdermott/vscode-language-babel/blob/master/README.md"
+    },
+    "support": {
+      "uri": "https://github.com/mgmcdermott/vscode-language-babel/issues"
+    }
+  },
+  "icon": "babel-logo.png",
+  "galleryBanner": {
+    "color": "#323330",
+    "theme": "dark"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": [
+          "Babel JavaScript"
+        ],
+        "extensions": [
+          "js",
+          "es6",
+          "es",
+          "babel",
+          "jsx",
+          "flow"
+        ],
+        "firstLine": "^#!.*\\bnode",
+        "mimetypes": [
+          "text/javascript"
+        ],
+        "configuration": "./javascript.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "javascript",
+        "scopeName": "source.js.jsx",
+        "path": "./grammars/Babel-Language.json"
+      },
+      {
+        "scopeName": "source.regexp.babel",
+        "path": "./grammars/Babel-Regex.json"
+      },
+      {
+        "scopeName": "source.css.styled",
+        "path": "./grammars/css.json"
+      }
+    ]
+  }
+}
