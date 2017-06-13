@@ -19,3 +19,6 @@ The [language-babel](https://github.com/gandm/language-babel) package by [gandm]
    - /* GraphQL */`For cases where no template tag function is available`
    ```
  - [styled-components](https://github.com/styled-components/styled-components) CSS inside tagged template strings.
+ 
+ ## Comparison to Sublime Babel
+ See [#1](/mgmcdermott/vscode-language-babel/issues/1)
