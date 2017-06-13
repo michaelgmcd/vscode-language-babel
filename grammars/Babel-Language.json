@@ -1063,7 +1063,7 @@
           }
         },
         {
-          "comment": "leading whitespace on a new line comment is scoped so Atom reflow works",
+          "comment": "Leading whitespace on a new line comment is scoped.",
           "contentName": "comment.line.double-slash.js",
           "begin": "((^\\s*)|\\s*)((//))",
           "end": "\\s*$",
@@ -5214,7 +5214,7 @@
     "graphql-comment": {
       "patterns": [
         {
-          "comment": "need to prefix comment space with a scope else Atom's reflow cmd doesn't work",
+          "comment": "Prefix comment space with a scope",
           "name": "comment.line.graphql.js",
           "match": "(\\s*)(#).*",
           "captures": {
