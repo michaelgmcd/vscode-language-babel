@@ -2,7 +2,7 @@
   "name": "vscode-language-babel",
   "displayName": "Babel JavaScript",
   "description": "VSCode syntax highlighting for today's JavaScript, ported from gandm's language-babel for Atom.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "mgmcdermott",
   "engines": {
     "vscode": "*"
@@ -50,8 +50,12 @@
         "configuration": "./javascript.language-configuration.json"
       },
       {
-        "id": "jsx-attrs",
-        "configuration": "./jsx-attrs.language-configuration.json"
+        "id": "jsx",
+        "configuration": "./jsx.language-configuration.json"
+      },
+      {
+        "id": "jsx-attr",
+        "configuration": "./jsx-attr.language-configuration.json"
       }
     ],
     "grammars": [
@@ -60,7 +64,10 @@
         "scopeName": "source.js.jsx",
         "path": "./grammars/Babel-Language.json",
         "embeddedLanguages": {
-          "meta.tag.jsx": "jsx-attrs"
+          "meta.tag.jsx": "jsx",
+          "meta.jsx.tag.termination": "jsx",
+          "JSXNested": "jsx",
+          "JSXAttrs": "jsx-attr"
         }
       },
       {
