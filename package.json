@@ -23,7 +23,7 @@
       "uri": "https://github.com/mgmcdermott/vscode-language-babel/issues"
     }
   },
-  "icon": "babel-logo.png",
+  "icon": "images/babel-logo.png",
   "galleryBanner": {
     "color": "#323330",
     "theme": "dark"
