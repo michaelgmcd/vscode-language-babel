@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import { createFragmentContainer, graphql } from 'react-relay';
 
 const StyledComponent = styled.div`
-  text-align: center;
+  text-align: center; /* Actual CSS highlighting! */
 `;
-
 const App = () => (
   <StyledComponent>
     {/* <p>Proper JSX commenting</p> */}
@@ -15,11 +14,10 @@ const App = () => (
     />
   </StyledComponent>
 );
-
 export default createFragmentContainer(
   App,
   graphql`
-    query Properly_Highlighted_GraphQL_Query {
+    fragment Properly_Highlighted_GraphQL_Query on Model {
       requestedVariables
     }
   `,
