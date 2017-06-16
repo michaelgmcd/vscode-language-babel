@@ -23,4 +23,4 @@ The [language-babel](https://github.com/gandm/language-babel) package by [gandm]
  - [styled-components](https://github.com/styled-components/styled-components) CSS inside tagged template strings.
 
  ## Comparison to Sublime Babel
- See [#1](/mgmcdermott/vscode-language-babel/issues/1)
+ See [#1](https://github.com/mgmcdermott/vscode-language-babel/issues/1)
