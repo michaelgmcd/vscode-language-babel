@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.6 (June 15, 2017)
+- Fix: Remove special highlighting of 'self' keyword
+
 ## 0.0.5 (June 14, 2017)
 - Fix: Better spacing in JSX comments
 - Fix: Use default JavaScript language configuration
