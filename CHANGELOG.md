@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.7 (July 13, 2017)
+- Various updates to the language-configuration files
+
 ## 0.0.6 (June 15, 2017)
 - Fix: Remove special highlighting of 'self' keyword
 
