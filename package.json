@@ -100,6 +100,40 @@
         "scopeName": "source.css.styled",
         "path": "./grammars/css.json"
       }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "package.json",
+        "url": "http://json.schemastore.org/package"
+      },
+      {
+        "fileMatch": "bower.json",
+        "url": "http://json.schemastore.org/bower"
+      },
+      {
+        "fileMatch": ".bowerrc",
+        "url": "http://json.schemastore.org/bowerrc"
+      },
+      {
+        "fileMatch": ".babelrc",
+        "url": "http://json.schemastore.org/babelrc"
+      },
+      {
+        "fileMatch": "jsconfig.json",
+        "url": "http://json.schemastore.org/jsconfig"
+      },
+      {
+        "fileMatch": "jsconfig.json",
+        "url": "./schemas/jsconfig.schema.json"
+      },
+      {
+        "fileMatch": "jsconfig.*.json",
+        "url": "http://json.schemastore.org/jsconfig"
+      },
+      {
+        "fileMatch": "jsconfig.*.json",
+        "url": "./schemas/jsconfig.schema.json"
+      }
     ]
   }
 }
