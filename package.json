@@ -2,7 +2,7 @@
   "name": "vscode-language-babel",
   "displayName": "Babel JavaScript",
   "description": "VSCode syntax highlighting for today's JavaScript, ported from gandm's language-babel for Atom.",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "mgmcdermott",
   "engines": {
     "vscode": "*"
