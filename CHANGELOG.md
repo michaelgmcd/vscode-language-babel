@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.0.9 (September 13, 2017)
+- Add missing JSConfig schema
+
+## 0.0.8 (August 28, 2017)
+- Add JSON validation (taken from the default VSCode JavaScript extension)
+- Add overwriting of the javascriptreact language
+
 ## 0.0.7 (July 13, 2017)
 - Various updates to the language-configuration files
 
