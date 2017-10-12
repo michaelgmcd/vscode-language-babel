@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.10 (October 11, 2017)
+- Fix: Support proper commenting in template tag literals (#5)
+- Feature: Add folding markers to javascript language configuration
+
 ## 0.0.9 (September 13, 2017)
 - Add missing JSConfig schema
 
