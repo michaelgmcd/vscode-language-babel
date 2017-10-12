@@ -51,7 +51,8 @@
           "patterns": [
             {
               "name": "constant.other.character-class.range.regexp",
-              "match": "((\\\\[wWsSdD]|\\.)|(\\\\([trnvf0]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|u\\{[\\da-fA-F]+\\}|.)|([^\\]\\s])))(\\-)((\\\\[wWsSdD]|\\.)|(\\\\([trnvf0]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|u\\{[\\da-fA-F]+\\}|.)|([^\\]\\s])))",
+              "match":
+                "((\\\\[wWsSdD]|\\.)|(\\\\([trnvf0]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|u\\{[\\da-fA-F]+\\}|.)|([^\\]\\s])))(\\-)((\\\\[wWsSdD]|\\.)|(\\\\([trnvf0]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|u\\{[\\da-fA-F]+\\}|.)|([^\\]\\s])))",
               "captures": {
                 "2": {
                   "name": "constant.character.escape.backslash.regexp"
@@ -188,7 +189,8 @@
           "match": "\\\\[wWsSdD]"
         },
         {
-          "match": "(\\\\([trnvf0\\\\]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|u\\{[\\da-fA-F]+\\}|.))",
+          "match":
+            "(\\\\([trnvf0\\\\]|c[A-Z]|x[\\da-fA-F]{2}|u[\\da-fA-F]{4}|u\\{[\\da-fA-F]+\\}|.))",
           "captures": {
             "1": {
               "name": "constant.character.escape.backslash.regexp"
