@@ -67,6 +67,10 @@
       {
         "id": "jsx-attr",
         "configuration": "./jsx-attr.language-configuration.json"
+      },
+      {
+        "id": "styled-css",
+        "configuration": "./styled-css.language-configuration.json"
       }
     ],
     "grammars": [
@@ -78,7 +82,8 @@
           "meta.tag.jsx": "jsx",
           "meta.jsx.tag.termination": "jsx",
           "JSXNested": "jsx",
-          "JSXAttrs": "jsx-attr"
+          "JSXAttrs": "jsx-attr",
+          "source.inside-js.css.styled": "styled-css"
         }
       },
       {
@@ -89,7 +94,8 @@
           "meta.tag.jsx": "jsx",
           "meta.jsx.tag.termination": "jsx",
           "JSXNested": "jsx",
-          "JSXAttrs": "jsx-attr"
+          "JSXAttrs": "jsx-attr",
+          "source.inside-js.css.styled": "styled-css"
         }
       },
       {
