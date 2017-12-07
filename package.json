@@ -49,7 +49,6 @@
         "extensions": [
           "js",
           "es6",
-          "es",
           "babel",
           "jsx",
           "flow"
