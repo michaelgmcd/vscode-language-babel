@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.12 (January 26, 2018)
+- Feature: Support empty and extends graphql syntax (#17)
+
 ## 0.0.11 (December 6, 2017)
 - Remove .es extension (#16)
 - Feature: Add support for optional-chaining operator ?. (Thanks [larsbs](https://github.com/larsbs))
