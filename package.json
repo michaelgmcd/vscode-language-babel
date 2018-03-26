@@ -60,8 +60,8 @@
         "configuration": "./javascript.language-configuration.json"
       },
       {
-        "id": "jsx",
-        "configuration": "./jsx.language-configuration.json"
+        "id": "jsx-tags",
+        "configuration": "./jsx-tags.language-configuration.json"
       },
       {
         "id": "jsx-attr",
@@ -78,9 +78,9 @@
         "scopeName": "source.js.jsx",
         "path": "./grammars/Babel-Language.json",
         "embeddedLanguages": {
-          "meta.tag.jsx": "jsx",
-          "meta.jsx.tag.termination": "jsx",
-          "JSXNested": "jsx",
+          "meta.tag.jsx": "jsx-tags",
+          "meta.jsx.tag.termination": "jsx-tags",
+          "JSXNested": "jsx-tags",
           "JSXAttrs": "jsx-attr",
           "source.inside-js.css.styled": "styled-css"
         }
@@ -90,9 +90,9 @@
         "scopeName": "source.js.jsx",
         "path": "./grammars/Babel-Language.json",
         "embeddedLanguages": {
-          "meta.tag.jsx": "jsx",
-          "meta.jsx.tag.termination": "jsx",
-          "JSXNested": "jsx",
+          "meta.tag.jsx": "jsx-tags",
+          "meta.jsx.tag.termination": "jsx-tags",
+          "JSXNested": "jsx-tags",
           "JSXAttrs": "jsx-attr",
           "source.inside-js.css.styled": "styled-css"
         }
