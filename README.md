@@ -20,7 +20,7 @@ The [language-babel](https://github.com/gandm/language-babel) package by [gandm]
    - gql`This is how Apollo for GraphQL uses template strings`
    - /* GraphQL */`For cases where no template tag function is available`
    ```
- - [styled-components](https://github.com/styled-components/styled-components) CSS inside tagged template strings.
+ - [styled-components](https://github.com/styled-components/styled-components), [emotion](https://github.com/emotion-js/emotion) CSS inside tagged template strings plus additional highlighting via `/* CSS */` comment
 
  ## Comparison to Sublime Babel
  See [#1](https://github.com/mgmcdermott/vscode-language-babel/issues/1)
