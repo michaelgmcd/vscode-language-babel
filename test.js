@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { createFragmentContainer, graphql } from 'react-relay';
 
+const bitsForInjectGlobal = /* CSS */`
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+`;
 const StyledComponent = styled.div`
   text-align: center; /* Actual CSS highlighting! */
 `;
