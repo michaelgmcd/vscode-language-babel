@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { createFragmentContainer, graphql } from 'react-relay';
 
-const bitsForInjectGlobal = /* CSS */`
+const bitsForInjectGlobal = /* CSS */ `
   body {
     width: 100%;
     height: 100%;
@@ -17,7 +17,7 @@ const App = () => (
     {/* <p>Proper JSX commenting</p> */}
     <input
       name="input"
-      //  placeholder="Comments properly if attributes are split!"
+      // placeholder="Comments properly if attributes are split!"
     />
   </StyledComponent>
 );
@@ -27,5 +27,5 @@ export default createFragmentContainer(
     fragment Properly_Highlighted_GraphQL_Query on Model {
       requestedVariables
     }
-  `,
+  `
 );
