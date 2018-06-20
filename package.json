@@ -64,7 +64,7 @@
     "grammars": [
       {
         "language": "javascript",
-        "scopeName": "source.js.jsx",
+        "scopeName": "source.js",
         "path": "./grammars/Babel-Language.json",
         "embeddedLanguages": {
           "meta.tag.jsx": "jsx",

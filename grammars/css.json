@@ -120,7 +120,7 @@
           },
           "patterns": [
             {
-              "include": "source.js.jsx#expression"
+              "include": "source.js#expression"
             }
           ]
         },
@@ -140,7 +140,7 @@
     "css-comment-and-interpolate": {
       "patterns": [
         {
-          "include": "source.js.jsx#string-content"
+          "include": "source.js#string-content"
         },
         {
           "include": "#css-comment"

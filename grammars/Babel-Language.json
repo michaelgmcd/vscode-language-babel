@@ -1,6 +1,6 @@
 {
   "name": "Babel JavaScript",
-  "scopeName": "source.js.jsx",
+  "scopeName": "source.js",
   "foldingStartMarker": "(/\\*|{|\\()",
   "foldingEndMarker": "(\\*/|\\}|\\))",
   "firstLineMatch": "^#!\\s*/.*\\b(node|js)$\\n?",
@@ -4509,7 +4509,7 @@
       "patterns": [
         {
           "name": "meta.embedded.expression.js",
-          "contentName": "source.js.jsx",
+          "contentName": "source.js",
           "begin": "{",
           "end": "}",
           "beginCaptures": {
