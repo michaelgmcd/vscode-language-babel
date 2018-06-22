@@ -1,8 +1,17 @@
 # Change Log
 
-## 0.0.16 (June 18, 2018)
+## 0.0.18 (June 18, 2018)
+
+- Fix: Change the scopeName of javascriptreact to "source.js" (#31)
+
+## 0.0.17 (June 18, 2018)
 
 - Fix: Revert removal of javascriptreact language (#30)
+
+## 0.0.16 (June 18, 2018)
+
+- Feature: Rename source.js.jsx to source.js (#29)
+- Fix: Remove javascriptreact language
 
 ## 0.0.15 (June 18, 2018)
 
