@@ -31,6 +31,17 @@
   "contributes": {
     "languages": [
       {
+        "id": "javascriptreact",
+        "aliases": [
+          "JavaScript React",
+          "jsx"
+        ],
+        "extensions": [
+          ".jsx"
+        ],
+        "configuration": "./javascript.language-configuration.json"
+      },
+      {
         "id": "javascript",
         "aliases": [
           "Babel JavaScript"
@@ -62,6 +73,18 @@
       }
     ],
     "grammars": [
+      {
+        "language": "javascriptreact",
+        "scopeName": "source.js.jsx",
+        "path": "./grammars/Babel-Language.json",
+        "embeddedLanguages": {
+          "meta.tag.jsx": "jsx",
+          "meta.jsx.tag.termination": "jsx",
+          "JSXNested": "jsx",
+          "JSXAttrs": "jsx-attr",
+          "source.inside-js.css.styled": "styled-css"
+        }
+      },
       {
         "language": "javascript",
         "scopeName": "source.js",
