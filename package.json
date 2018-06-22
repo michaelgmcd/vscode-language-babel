@@ -37,7 +37,8 @@
           "jsx"
         ],
         "extensions": [
-          ".jsx"
+          ".jsx",
+          ".js"
         ],
         "configuration": "./javascript.language-configuration.json"
       },
@@ -75,7 +76,7 @@
     "grammars": [
       {
         "language": "javascriptreact",
-        "scopeName": "source.js.jsx",
+        "scopeName": "source.js",
         "path": "./grammars/Babel-Language.json",
         "embeddedLanguages": {
           "meta.tag.jsx": "jsx",
