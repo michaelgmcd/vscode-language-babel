@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.16 (June 18, 2018)
+
+- Fix: Revert removal of javascriptreact language (#30)
+
 ## 0.0.15 (June 18, 2018)
 
 - Feature: Add support for stage-1 nullish coalescing operator (#28)
