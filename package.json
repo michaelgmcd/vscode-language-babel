@@ -25,7 +25,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "precommit": "lint-staged",
     "prettier:stdin": "prettier --single-quote --print-width 100 --trailing-comma all --write",
-    "prettier": "npm run prettier:stdin -- '**/*.ts'",
+    "prettier": "npm run prettier:stdin -- '**/*.ts' '**/*.json'",
     "test": "jest"
   },
   "repository": {
@@ -84,6 +84,9 @@
       },
       {
         "id": "jsx-attr",
+        "aliases": [
+          "jsx-tags"
+        ],
         "configuration": "./jsx-attr.language-configuration.json"
       },
       {
