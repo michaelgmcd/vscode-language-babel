@@ -2,7 +2,7 @@
   "name": "vscode-language-babel",
   "displayName": "Babel JavaScript",
   "description": "VSCode syntax highlighting for today's JavaScript, ported from gandm's language-babel for Atom.",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "publisher": "mgmcdermott",
   "main": "./dist/extension",
   "engines": {
@@ -161,7 +161,10 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx,css,md}": ["npm run prettier:stdin --", "git add"]
+    "*.{ts,tsx,css,md}": [
+      "npm run prettier:stdin --",
+      "git add"
+    ]
   },
   "dependencies": {
     "vscode": "^1.1.18"
