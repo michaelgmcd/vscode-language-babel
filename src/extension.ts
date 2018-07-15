@@ -9,7 +9,7 @@ export const jsxConfiguration: LanguageConfiguration = {
       beforeText: /.*/,
       afterText: /\/>/,
       action: { indentAction: IndentAction.IndentOutdent },
-    }
+    },
   ],
 };
 
@@ -20,7 +20,7 @@ export const jsxAttrConfiguration: LanguageConfiguration = {
       beforeText: />/,
       afterText: /<\//,
       action: { indentAction: IndentAction.IndentOutdent },
-    }
+    },
   ],
 };
 
