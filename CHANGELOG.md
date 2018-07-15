@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.19 (July 15, 2018)
+
+- Feature: Support auto-indenting (#21)
+
 ## 0.0.18 (June 18, 2018)
 
 - Fix: Change the scopeName of javascriptreact to "source.js" (#31)
