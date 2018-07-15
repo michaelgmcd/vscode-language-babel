@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.20 (July 15, 2018)
+
+- Fix: Remove html-template highlighting (#21)
+
 ## 0.0.19 (July 15, 2018)
 
 - Feature: Support auto-indenting (#21)
