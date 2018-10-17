@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.21 (October 17, 2018)
+
+- Feature: Add support for createGlobalStyle from styled-components (#37)
+
 ## 0.0.20 (July 15, 2018)
 
 - Fix: Remove html-template highlighting (#23)
