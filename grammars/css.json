@@ -125,7 +125,8 @@
           ]
         },
         {
-          "comment": "units such as px may appear right after a interpolation close }",
+          "comment":
+            "units such as px may appear right after a interpolation close }",
           "begin": "(?<=\\})(?=[a-zA-Z])",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
@@ -287,7 +288,8 @@
       }
     },
     "css-<length>": {
-      "match": "(?i)(vw|vmin|vmax|vh|rem|q|px|pt|pc|mozmm|mm|in|fr|ex|em|cm|ch)\\b",
+      "match":
+        "(?i)(vw|vmin|vmax|vh|rem|q|px|pt|pc|mozmm|mm|in|fr|ex|em|cm|ch)\\b",
       "captures": {
         "1": {
           "name": "constant.length.units.css"
@@ -697,7 +699,8 @@
         },
         {
           "contentName": "meta.property-values.css",
-          "begin": "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(object-(position|fit)))\\s*+(:)",
+          "begin":
+            "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(object-(position|fit)))\\s*+(:)",
           "end": "(;)|(?=[`})\\]])",
           "beginCaptures": {
             "1": {
@@ -759,7 +762,8 @@
         },
         {
           "contentName": "meta.property-values.css",
-          "begin": "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(overflow(-(y|x|wrap))?))\\s*+(:)",
+          "begin":
+            "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(overflow(-(y|x|wrap))?))\\s*+(:)",
           "end": "(;)|(?=[`})\\]])",
           "beginCaptures": {
             "1": {
@@ -821,7 +825,8 @@
         },
         {
           "contentName": "meta.property-values.css",
-          "begin": "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(perspective(-(origin))?))\\s*+(:)",
+          "begin":
+            "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(perspective(-(origin))?))\\s*+(:)",
           "end": "(;)|(?=[`})\\]])",
           "beginCaptures": {
             "1": {
@@ -988,7 +993,8 @@
         },
         {
           "contentName": "meta.property-values.css",
-          "begin": "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(unicode-(range|bidi)))\\s*+(:)",
+          "begin":
+            "(?i)(?<=^|[\\W])\\s*+((-(webkit|moz|o|ms)-)?(unicode-(range|bidi)))\\s*+(:)",
           "end": "(;)|(?=[`})\\]])",
           "beginCaptures": {
             "1": {
@@ -1181,7 +1187,8 @@
     "nth-child": {
       "patterns": [
         {
-          "match": "\\s*+(\\+|-)?\\s*+([0-9]*)?(n)\\s*+((\\+|-)\\s*+([0-9]*))?\\s*+(?=\\))",
+          "match":
+            "\\s*+(\\+|-)?\\s*+([0-9]*)?(n)\\s*+((\\+|-)\\s*+([0-9]*))?\\s*+(?=\\))",
           "captures": {
             "1": {
               "name": "keyword.operator.arithmetic.css"
@@ -1346,7 +1353,8 @@
     },
     "@font-feature-values-rule": {
       "name": "meta.font-face.css",
-      "begin": "(?i)(?<=^|[\\W])\\s*+(@(-(webkit|moz|o|ms)-)?font-feature-values)\\b",
+      "begin":
+        "(?i)(?<=^|[\\W])\\s*+(@(-(webkit|moz|o|ms)-)?font-feature-values)\\b",
       "end": "(?<=})",
       "beginCaptures": {
         "1": {
@@ -1608,7 +1616,8 @@
             },
             {
               "comment": "prefixed values that aren't known",
-              "match": "(?i)\\s*+((-(webkit|moz|o|ms)-)[_a-zA-Z][-_a-zA-Z0-9]*)\\s*+(:)",
+              "match":
+                "(?i)\\s*+((-(webkit|moz|o|ms)-)[_a-zA-Z][-_a-zA-Z0-9]*)\\s*+(:)",
               "captures": {
                 "1": {
                   "name": "support.type.property-names.css"
@@ -1670,7 +1679,8 @@
             },
             {
               "comment": "prefixed values that aren't known",
-              "match": "(?i)\\s*+((-(webkit|moz|o|ms)-)[_a-zA-Z][-_a-zA-Z0-9]*)\\s*+(:)",
+              "match":
+                "(?i)\\s*+((-(webkit|moz|o|ms)-)[_a-zA-Z][-_a-zA-Z0-9]*)\\s*+(:)",
               "captures": {
                 "1": {
                   "name": "support.type.property-names.css"
@@ -1735,7 +1745,8 @@
         },
         {
           "comment": "psuedo double colon",
-          "match": "(?i)((::)(selection|first-line|first-letter|before|backdrop|after))\\b",
+          "match":
+            "(?i)((::)(selection|first-line|first-letter|before|backdrop|after))\\b",
           "captures": {
             "2": {
               "name": "keyword.operator.pseudo.css"
@@ -1907,7 +1918,8 @@
         },
         {
           "comment": "psuedo selectors for browser prefixes",
-          "match": "(?i)((:{1,2})((-(webkit|moz|o|ms)-)[_a-zA-Z][-_a-zA-Z0-9]*))\\b",
+          "match":
+            "(?i)((:{1,2})((-(webkit|moz|o|ms)-)[_a-zA-Z][-_a-zA-Z0-9]*))\\b",
           "captures": {
             "2": {
               "name": "keyword.operator.pseudo.css"
