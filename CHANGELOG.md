@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.22 (October 17, 2018)
+
+- Fix: Fix support for JS in HTML (#33)
+
 ## 0.0.21 (October 17, 2018)
 
 - Feature: Add support for createGlobalStyle from styled-components (#37)
