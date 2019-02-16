@@ -23,7 +23,6 @@
     "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "precommit": "lint-staged",
     "prettier:stdin": "prettier --single-quote --print-width 100 --trailing-comma all --write",
     "prettier": "npm run prettier:stdin -- '**/*.ts' '**/*.json'",
     "test": "jest"
@@ -170,12 +169,17 @@
     ]
   },
   "dependencies": {
-    "vscode": "^1.1.18"
+    "vscode": "^1.1.29"
   },
   "devDependencies": {
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.13.7",
-    "typescript": "^2.9.2"
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
