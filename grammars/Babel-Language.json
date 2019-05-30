@@ -2086,7 +2086,7 @@
         },
         {
           "comment": "ternary operator - make sure end : is consumed to avoid mistake as flow type",
-          "begin": "\\s*+(\\?)(?!\\.[^\\d])",
+          "begin": "\\s*+(\\?)(?!\\.[^\\d]|\\?)",
           "end": "\\s*(:)((?=::)|(?!:))",
           "beginCaptures": {
             "1": {
