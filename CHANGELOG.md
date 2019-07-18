@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.23 (July 17, 2019)
+
+- Chore: Update dependencies
+- Fix: Prevent ternary operator from incorrectly matching a nullcoalesce
+
 ## 0.0.22 (October 17, 2018)
 
 - Fix: Fix support for JS in HTML (#33)
