@@ -25,7 +25,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "prettier:stdin": "prettier --single-quote --print-width 100 --trailing-comma all --write",
     "prettier": "npm run prettier:stdin -- '**/*.ts' '**/*.json'",
-    "test": "jest"
+    "test": "vscode-tmgrammar-test -s source.js -g grammars/Babel-Language.json -t 'tests/*.js'"
   },
   "repository": {
     "type": "git",
@@ -174,7 +174,8 @@
     "lint-staged": "^8.1.4",
     "prettier": "^1.16.4",
     "typescript": "^3.3.3",
-    "vscode": "^1.1.35"
+    "vscode": "^1.1.35",
+    "vscode-tmgrammar-test": "0.0.5"
   },
   "husky": {
     "hooks": {
