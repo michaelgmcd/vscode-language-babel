@@ -741,6 +741,30 @@
         }
       ]
     },
+    "type-argument-brackets": {
+      "patterns": [
+        {
+          "comment": "Type arguments. This is complicated since we don't want to match things like foo < 123 || bar > baz",
+          "name": "meta.type-arguments.flowtype",
+          "begin": "\\s*+(<)(?=((?:(?>[^<>]+)|<\\g<-1>>)*)>)",
+          "end": "\\s*(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.flowtype" }
+          },
+          "beginCaptures": {
+            "1": { "name": "punctuation.flowtype" }
+          },
+          "patterns": [
+            {
+              "include": "#flowtype-parse-types"
+            },
+            {
+              "include": "#literal-comma"
+            }
+          ]
+        }
+      ]
+    },
     "square-brackets": {
       "patterns": [
         {
@@ -2146,6 +2170,8 @@
           "include": "#literal-keywords"
         },
         {
+          "comment": "A new expression with no type params or arguments, like new Foo()",
+          "name": "meta.new-class.without-arguments.js",
           "match": "(?<!\\.)\\s*+(\\bnew\\b)\\s*+((\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?(\\()\\s*+(\\)))",
           "captures": {
             "1": {
@@ -2172,7 +2198,24 @@
           }
         },
         {
-          "begin": "(?<!\\.)\\s*+(\\bnew\\b)\\s*+((\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?(?=\\())",
+          "comment": "A new expression with type params and no arguments, like new Foo<string>()",
+          "name": "meta.new-class.without-arguments.js",
+          "begin": "(?<!\\.)\\s*+(\\bnew\\b)\\s*+((\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?\\s*+(?=(<(?:(?>[^<>]+)|\\g<-1>)*>)\\s*+(\\()\\s*+(\\))))",
+          "end": "(?=.)",
+          "applyEndPatternLast": 1,
+          "beginCaptures": {
+            "1": { "name": "keyword.operator.new.js" },
+            "2": { "name": "meta.function-call.without-arguments.js" },
+            "3": { "name": "keyword.operator.private.js" },
+            "4": { "name": "entity.name.type.instance.js" },
+            "5": { "name": "keyword.operator.existential.js" }
+          },
+          "patterns": [{ "include": "#type-argument-brackets" }, { "include": "#round-brackets" }]
+        },
+        {
+          "comment": "A new expression with arguments and maybe type params, like new Foo<string>(123)",
+          "name": "meta.new-class.with-arguments.js",
+          "begin": "(?<!\\.)\\s*+(\\bnew\\b)\\s*+((\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?\\s*+(?=(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\())",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2194,6 +2237,9 @@
           },
           "patterns": [
             {
+              "include": "#type-argument-brackets"
+            },
+            {
               "include": "#round-brackets"
             }
           ]
@@ -2202,6 +2248,7 @@
           "include": "#literal-operators"
         },
         {
+          "comment": "A call expression with no type params or arguments, like foo()",
           "name": "meta.function-call.without-arguments.js",
           "match": "(?<!\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?(\\()\\s*+(\\))",
           "captures": {
@@ -2223,9 +2270,22 @@
           }
         },
         {
-          "comment": "maybe in array form e.g. foo[bar]()",
+          "comment": "A call expression with type params and no arguments, like foo<string>()",
           "name": "meta.function-call.without-arguments.js",
-          "begin": "(?<!\\.)\\s*+((\\bnew\\b)*)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)(?=\\s*(\\[(?:(?>[^\\[\\]]+)|\\g<-1>)*\\])\\s*+\\(\\s*+\\))",
+          "begin": "(?<!\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?\\s*+(?=(<(?:(?>[^<>]+)|\\g<-1>)*>)\\s*+(\\()\\s*+(\\)))",
+          "end": "(?=.)",
+          "applyEndPatternLast": 1,
+          "beginCaptures": {
+            "1": { "name": "keyword.operator.private.js" },
+            "2": { "name": "entity.name.function.js" },
+            "3": { "name": "keyword.operator.existential.js" }
+          },
+          "patterns": [{ "include": "#type-argument-brackets" }, { "include": "#round-brackets" }]
+        },
+        {
+          "comment": "maybe in array form e.g. foo[bar]() or foo[bar]<string>()",
+          "name": "meta.function-call.without-arguments.js",
+          "begin": "(?<!\\.)\\s*+((\\bnew\\b)*)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)(?=\\s*(\\[(?:(?>[^\\[\\]]+)|\\g<-1>)*\\])\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\(\\s*+\\))",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2244,13 +2304,17 @@
               "include": "#square-brackets"
             },
             {
+              "include": "#type-argument-brackets"
+            },
+            {
               "include": "#round-brackets"
             }
           ]
         },
         {
+          "comment": "A call expression with arguments and maybe type params, like foo(123) or foo<string>(123)",
           "name": "meta.function-call.with-arguments.js",
-          "begin": "(?<!\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?(?=\\()",
+          "begin": "(?<!\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(\\?\\.)?\\s*+(?=(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2266,14 +2330,17 @@
           },
           "patterns": [
             {
+              "include": "#type-argument-brackets"
+            },
+            {
               "include": "#round-brackets"
             }
           ]
         },
         {
-          "comment": "maybe in array form e.g. foo[bar]()",
-          "name": "meta.function-call.without-arguments.js",
-          "begin": "(?<!\\.)\\s*+((\\bnew\\b)*)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\g<-1>)*\\])\\s*+\\()",
+          "comment": "maybe in array form e.g. foo[bar](123)",
+          "name": "meta.function-call.with-arguments.js",
+          "begin": "(?<!\\.)\\s*+((\\bnew\\b)*)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\g<-1>)*\\])\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2290,6 +2357,9 @@
           "patterns": [
             {
               "include": "#square-brackets"
+            },
+            {
+              "include": "#type-argument-brackets"
             },
             {
               "include": "#round-brackets"
@@ -2704,7 +2774,7 @@
         {
           "name": "meta.method-call.without-arguments.js",
           "comment": "e.g CONSTNAME.method() or CONST.method[p]()",
-          "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{Lu}\\p{Nd}])*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(\\(\\s*+\\)))",
+          "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{Lu}\\p{Nd}])*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+(\\(\\s*+\\)))",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2730,6 +2800,9 @@
           "patterns": [
             {
               "include": "#square-brackets"
+            },
+            {
+              "include": "#type-argument-brackets"
             },
             {
               "include": "#round-brackets"
@@ -2774,7 +2847,7 @@
         {
           "name": "meta.method-call.with-arguments.js",
           "comment": "e.g CONSTNAME.method()",
-          "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{Lu}\\p{Nd}])*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+\\()",
+          "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{Lu}\\p{Nd}])*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2802,6 +2875,9 @@
               "include": "#square-brackets"
             },
             {
+              "include": "#type-argument-brackets"
+            },
+            {
               "include": "#round-brackets"
             }
           ]
@@ -2809,7 +2885,7 @@
         {
           "name": "meta.method-call.with-arguments.js",
           "comment": "e.g Abc.aaa()",
-          "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+\\()",
+          "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2835,13 +2911,16 @@
           "patterns": [
             {
               "include": "#round-brackets"
+            },
+            {
+              "include": "#type-argument-brackets"
             }
           ]
         },
         {
           "name": "meta.method-call.without-arguments.js",
           "comment": "e.g .aaa()",
-          "begin": "(?<=\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(\\(\\s*+\\)))",
+          "begin": "(?<=\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+(\\(\\s*+\\)))",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2860,6 +2939,9 @@
               "include": "#square-brackets"
             },
             {
+              "include": "#type-argument-brackets"
+            },
+            {
               "include": "#round-brackets"
             }
           ]
@@ -2867,7 +2949,7 @@
         {
           "name": "meta.method-call.with-arguments.js",
           "comment": "e.g .aaa()",
-          "begin": "(?<=\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+\\()",
+          "begin": "(?<=\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
           "end": "(?=.)",
           "applyEndPatternLast": 1,
           "beginCaptures": {
@@ -2881,6 +2963,9 @@
           "patterns": [
             {
               "include": "#square-brackets"
+            },
+            {
+              "include": "#type-argument-brackets"
             },
             {
               "include": "#round-brackets"
