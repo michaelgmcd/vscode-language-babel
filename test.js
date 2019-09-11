@@ -9,9 +9,11 @@ const bitsForInjectGlobal = /* CSS */ `
     overflow: hidden;
   }
 `;
+
 const StyledComponent = styled.div`
   text-align: center; /* Actual CSS highlighting! */
 `;
+
 const App = () => (
   <StyledComponent>
     {/* <p>Proper JSX commenting</p> */}
@@ -21,6 +23,7 @@ const App = () => (
     />
   </StyledComponent>
 );
+
 export default createFragmentContainer(
   App,
   graphql`
@@ -29,3 +32,13 @@ export default createFragmentContainer(
     }
   `
 );
+
+
+class FlowTypeArguments extends React.Component<MyProps> {
+  myRef = React.createRef<HTMLDivElement>(); // This causes the problem!
+
+  render() {
+    const { foo } = this.props;
+    return null;
+  }
+}
