@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.24 (September 11, 2019)
+
+- Fix: Highlighting of function calls with Flow type args (#43)
+
 ## 0.0.23 (July 17, 2019)
 
 - Chore: Update dependencies
