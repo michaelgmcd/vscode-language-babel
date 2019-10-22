@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.25 (October 21, 2019)
+
+- Feature: Support "declare class A implements B {}" syntax (#55)
+
 ## 0.0.24 (September 11, 2019)
 
 - Fix: Highlighting of function calls with Flow type args (#43)
