@@ -5430,6 +5430,18 @@
               }
             },
             {
+              "comment": "look for implements keyword",
+              "match": "\\s*+\\b((implements))\\b\\s*+",
+              "captures": {
+                "1": {
+                  "name": "meta.class.implements.js"
+                },
+                "2": {
+                  "name": "storage.type.implements.js"
+                }
+              }
+            },
+            {
               "comment": "look for mixins keyword",
               "match": "\\s*+\\b((mixins))\\b\\s*+",
               "captures": {
