@@ -2210,7 +2210,10 @@
             "4": { "name": "entity.name.type.instance.js" },
             "5": { "name": "keyword.operator.existential.js" }
           },
-          "patterns": [{ "include": "#type-argument-brackets" }, { "include": "#round-brackets" }]
+          "patterns": [
+            { "include": "#type-argument-brackets" },
+            { "include": "#round-brackets" }
+          ]
         },
         {
           "comment": "A new expression with arguments and maybe type params, like new Foo<string>(123)",
@@ -2280,7 +2283,10 @@
             "2": { "name": "entity.name.function.js" },
             "3": { "name": "keyword.operator.existential.js" }
           },
-          "patterns": [{ "include": "#type-argument-brackets" }, { "include": "#round-brackets" }]
+          "patterns": [
+            { "include": "#type-argument-brackets" },
+            { "include": "#round-brackets" }
+          ]
         },
         {
           "comment": "maybe in array form e.g. foo[bar]() or foo[bar]<string>()",
