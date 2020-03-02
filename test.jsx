@@ -9,9 +9,11 @@ const bitsForInjectGlobal = /* CSS */ `
     overflow: hidden;
   }
 `;
+
 const StyledComponent = styled.div`
   text-align: center; /* Actual CSS highlighting! */
 `;
+
 const App = () => (
   <StyledComponent>
     {/* <p>Proper JSX commenting</p> */}
@@ -21,6 +23,7 @@ const App = () => (
     />
   </StyledComponent>
 );
+
 export default createFragmentContainer(
   App,
   graphql`
@@ -29,3 +32,25 @@ export default createFragmentContainer(
     }
   `
 );
+
+// https://github.com/michaelgmcd/vscode-language-babel/issues/62
+const userType = gql`
+  """
+  Description of the user type
+  """
+  type User { # Comment about user type
+    "Description of the email field"
+    email: String!
+    id: ID!
+  }
+`;
+
+
+class FlowTypeArguments extends React.Component<MyProps> {
+  myRef = React.createRef<HTMLDivElement>();
+
+  render() {
+    const { foo } = this.props;
+    return null;
+  }
+}

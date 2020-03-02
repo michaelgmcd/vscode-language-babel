@@ -33,9 +33,21 @@ export default createFragmentContainer(
   `
 );
 
+// https://github.com/michaelgmcd/vscode-language-babel/issues/62
+const userType = gql`
+  """
+  Description of the user type
+  """
+  type User { # Comment about user type
+    "Description of the email field"
+    email: String!
+    id: ID!
+  }
+`;
+
 
 class FlowTypeArguments extends React.Component<MyProps> {
-  myRef = React.createRef<HTMLDivElement>(); // This causes the problem!
+  myRef = React.createRef<HTMLDivElement>();
 
   render() {
     const { foo } = this.props;

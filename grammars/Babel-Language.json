@@ -6039,17 +6039,18 @@
     "graphql-comment": {
       "patterns": [
         {
-          "comment": "need to prefix comment space with a scope else Atom's reflow cmd doesn't work",
+          "name": "comment.block.graphql.js",
+          "begin": "\\s*+\"\"\"",
+          "end": "\\s*\"\"\""
+        },
+        {
           "name": "comment.line.graphql.js",
-          "match": "(\\s*)(\\#).*",
+          "match": "(\\s*)((\\#.*)|(\".*\"))",
           "captures": {
             "1": {
               "name": "punctuation.whitespace.comment.leading.graphql"
             }
           }
-        },
-        {
-          "include": "#string-content"
         }
       ]
     },
