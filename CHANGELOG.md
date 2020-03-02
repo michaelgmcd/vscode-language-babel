@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.26 (March 2, 2020)
+
+- Feature: Support docstrings in GraphQL (#62)
+
 ## 0.0.25 (October 21, 2019)
 
 - Feature: Support "declare class A implements B {}" syntax (#55)
