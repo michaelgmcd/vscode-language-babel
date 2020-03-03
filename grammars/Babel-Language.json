@@ -4281,25 +4281,19 @@
       ]
     },
     "enum-declaration": {
-      "name": "meta.enum.declaration.js",
-      "begin": "(?:\\b(export)\\s+(?:(default)\\s+)?)?\\b(enum)\\s+([_$[:alpha:]][_$[:alnum:]]*)(?:\\s+(of)\\s+(boolean|string|symbol|number))?",
+      "name": "meta.enum.declaration.flowtype",
+      "begin": "(?<!\\.)\\s*+\\b(enum)\\s+([_$[:alpha:]][_$[:alnum:]]*)(?:\\s+(of)\\s+(boolean|string|symbol|number))?",
       "beginCaptures": {
         "1": {
-          "name": "keyword.control.export.js"
+          "name": "storage.type.enum.flowtype"
         },
         "2": {
-          "name": "keyword.control.export.js"
+          "name": "entity.name.type.enum.flowtype"
         },
         "3": {
-          "name": "storage.type.enum.js"
+          "name": "meta.enum.of.flowtype"
         },
         "4": {
-          "name": "entity.name.type.enum.js"
-        },
-        "5": {
-          "name": "meta.enum.of.js"
-        },
-        "6": {
           "name": "support.type.builtin.primitive.flowtype"
         }
       },
@@ -4329,7 +4323,7 @@
               "begin": "([_$[:alpha:]][_$[:alnum:]]*)(?:\\s*(=))?\\s*",
               "beginCaptures": {
                 "1": {
-                  "name": "variable.other.enummember.js"
+                  "name": "variable.other.enummember.flowtype"
                 },
                 "2": {
                   "name": "keyword.operator.assignment.js"
