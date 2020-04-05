@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.27 (April 5, 2020)
+
+- Fix: Change all instances of `kewyword` to `keyword` (#66) ([dustypomerleau](https://github.com/dustypomerleau))
+- Feature: Support syntax highlighting for Flow enums (#63) ([gkz](https://github.com/gkz))
+
 ## 0.0.26 (March 2, 2020)
 
 - Feature: Support docstrings in GraphQL (#62)
