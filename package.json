@@ -6,7 +6,7 @@
   "publisher": "mgmcdermott",
   "main": "./dist/extension",
   "engines": {
-    "vscode": "1.x.x"
+    "vscode": "^1.46.0"
   },
   "categories": [
     "Programming Languages"
