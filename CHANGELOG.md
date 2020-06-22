@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.29 (June 22, 2020)
+
+- Fix: Improve information message
+
 ## 0.0.28 (June 22, 2020)
 
 - Docs: Update documentation and description
