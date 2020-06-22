@@ -1,4 +1,12 @@
-import { ExtensionContext, IndentAction, languages, LanguageConfiguration } from 'vscode';
+import {
+  ExtensionContext,
+  IndentAction,
+  languages,
+  LanguageConfiguration,
+  window,
+  Uri,
+  env,
+} from 'vscode';
 
 const wordPattern = /(-?\d*\.\d\w*)|([^\`\~\!\@\$\^\&\*\(\)\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\s]+)/g;
 
@@ -24,7 +32,24 @@ export const jsxAttrConfiguration: LanguageConfiguration = {
   ],
 };
 
-export function activate(context: ExtensionContext) {
+const welcomeMessageShown = 'WELCOME_MESSAGE_SHOWN';
+
+export async function activate(context: ExtensionContext) {
   languages.setLanguageConfiguration('jsx', jsxConfiguration);
   languages.setLanguageConfiguration('jsx-attr', jsxAttrConfiguration);
+
+  if (!context.globalState.get<boolean>(welcomeMessageShown)) {
+    const response = await window.showInformationMessage(
+      'Thanks for downloading Language Babel! Make sure to follow me on Twitter @michaelgmcd.',
+      'Follow',
+    );
+    // @ts-ignore
+    console.log(response);
+    if (response) {
+      env.openExternal(
+        Uri.parse('https://twitter.com/intent/user?screen_name=michaelgmcd'),
+      );
+    }
+    await context.globalState.update(welcomeMessageShown, true);
+  }
 }

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.28 (June 22, 2020)
+
+- Docs: Update documentation and description
+
 ## 0.0.27 (April 5, 2020)
 
 - Fix: Change all instances of `kewyword` to `keyword` (#66) ([dustypomerleau](https://github.com/dustypomerleau))
