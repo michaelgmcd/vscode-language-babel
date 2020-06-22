@@ -40,11 +40,9 @@ export async function activate(context: ExtensionContext) {
 
   if (!context.globalState.get<boolean>(welcomeMessageShown)) {
     const response = await window.showInformationMessage(
-      'Thanks for downloading Language Babel! Make sure to follow me on Twitter @michaelgmcd.',
+      'Thanks for downloading Babel JavaScript! Make sure to follow me on Twitter @michaelgmcd.',
       'Follow',
     );
-    // @ts-ignore
-    console.log(response);
     if (response) {
       env.openExternal(
         Uri.parse('https://twitter.com/intent/user?screen_name=michaelgmcd'),
