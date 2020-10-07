@@ -2,7 +2,7 @@
   "name": "vscode-language-babel",
   "displayName": "Babel JavaScript",
   "description": "VSCode syntax highlighting for today's JavaScript",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "publisher": "mgmcdermott",
   "main": "./dist/extension",
   "engines": {

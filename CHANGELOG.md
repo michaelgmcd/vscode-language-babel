@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.30 (October 7, 2020)
+
+- Refactor: Remove Twitter Plug
+
 ## 0.0.29 (June 22, 2020)
 
 - Fix: Improve information message
