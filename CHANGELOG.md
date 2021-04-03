@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.31 (April 3, 2021)
+
+- Feature: Support stylesheet in astroturf (#84)
+
 ## 0.0.30 (October 7, 2020)
 
 - Refactor: Remove Twitter Plug
