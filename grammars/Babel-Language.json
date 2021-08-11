@@ -1545,7 +1545,7 @@
         {
           "comment": "Styled CSS tags",
           "contentName": "source.inside-js.css.styled",
-          "begin": "\\s*+(?:(?:\\b(css|injectGlobal|keyframes|createGlobalStyle|stylesheet)\\b)|(?:(\\bstyled)(?:(?:(\\?\\.)|(\\.))\\s*(\\w+)))|(/\\* CSS \\*/))\\s*((`))",
+          "begin": "\\s*+(?:(?:\\b(css|injectGlobal|keyframes|createGlobalStyles?|stylesheet)\\b)|(?:(\\bstyled)(?:(?:(\\?\\.)|(\\.))\\s*(\\w+)))|(/\\* CSS \\*/))\\s*((`))",
           "end": "\\s*((`))",
           "beginCaptures": {
             "1": {
