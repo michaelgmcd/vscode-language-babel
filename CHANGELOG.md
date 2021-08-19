@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.32 (August 18, 2021)
+- Fix: add support for createGlobalStyles as CSS (#90)
+
 ## 0.0.31 (April 3, 2021)
 
 - Feature: Support stylesheet in astroturf (#84)
