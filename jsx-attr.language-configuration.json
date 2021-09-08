@@ -3,6 +3,7 @@
     "lineComment": "//"
   },
   "brackets": [["<", ">"], ["{", "}"], ["[", "]"], ["(", ")"]],
+  "colorizedBracketPairs": [["{", "}"], ["[", "]"], ["(", ")"]],
   "autoClosingPairs": [
     { "open": "{", "close": "}" },
     { "open": "[", "close": "]" },

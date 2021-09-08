@@ -55,7 +55,6 @@ const testingBracketColorization = {
   }
 }
 
-
 class FlowTypeArguments extends React.Component<MyProps> {
   myRef = React.createRef<HTMLDivElement>();
 
