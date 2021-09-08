@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.34 (September 7, 2021)
+
+- Feature: support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) in JSX (#92)
+
 ## 0.0.33 (September 7, 2021)
 
 - Feature: support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) (#92)
