@@ -724,15 +724,15 @@
     "round-brackets": {
       "patterns": [
         {
-          "begin": "\\s*+(\\()",
-          "end": "\\s*(\\))",
-          "endCaptures": {
-            "1": {
+          "begin": "\\(",
+          "end": "\\)",
+          "beginCaptures": {
+            "0": {
               "name": "meta.brace.round.js"
             }
           },
-          "beginCaptures": {
-            "1": {
+          "endCaptures": {
+            "0": {
               "name": "meta.brace.round.js"
             }
           },
@@ -1343,7 +1343,7 @@
       "patterns": [
         {
           "begin": "(?<!\\.)\\s*+\\b(const|let|var)\\b",
-          "end": "(?=^\\s*[$_[:alpha:]][$_[:alnum:]]*:\\s*($|\\b(do|for|while)\\b))|\\s*(?=;|\\*/|\\b(if|switch|case|break|default|try|var|let|const|static|function|return|class|do|for|while|debugger|export|import|yield|type|declare|interface|enum)\\b|\\)|})",
+          "end": "(?=\\S)",
           "beginCaptures": {
             "1": {
               "name": "storage.type.js"
@@ -2784,8 +2784,7 @@
           "name": "meta.method-call.without-arguments.js",
           "comment": "e.g CONSTNAME.method() or CONST.method[p]()",
           "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{Lu}\\p{Nd}])*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+(\\(\\s*+\\)))",
-          "end": "(?=.)",
-          "applyEndPatternLast": 1,
+          "end": ".",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.private.js"
@@ -2822,8 +2821,7 @@
           "name": "meta.method-call.without-arguments.js",
           "comment": "e.g Abc.aaa()",
           "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(\\(\\s*+\\)))",
-          "end": "(?=.)",
-          "applyEndPatternLast": 1,
+          "end": ".",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.private.js"
@@ -2857,8 +2855,7 @@
           "name": "meta.method-call.with-arguments.js",
           "comment": "e.g CONSTNAME.method()",
           "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{Lu}\\p{Nd}])*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
-          "end": "(?=.)",
-          "applyEndPatternLast": 1,
+          "end": ".",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.private.js"
@@ -2895,8 +2892,7 @@
           "name": "meta.method-call.with-arguments.js",
           "comment": "e.g Abc.aaa()",
           "begin": "\\s*+(\\#?)((?:[\\p{Lu}])(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?:(\\?\\.)|(\\.))\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
-          "end": "(?=.)",
-          "applyEndPatternLast": 1,
+          "end": ".",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.private.js"
@@ -2930,8 +2926,7 @@
           "name": "meta.method-call.without-arguments.js",
           "comment": "e.g .aaa()",
           "begin": "(?<=\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+(\\(\\s*+\\)))",
-          "end": "(?=.)",
-          "applyEndPatternLast": 1,
+          "end": ".",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.private.js"
@@ -2959,8 +2954,7 @@
           "name": "meta.method-call.with-arguments.js",
           "comment": "e.g .aaa()",
           "begin": "(?<=\\.)\\s*+(\\#?)((?:[$_\\p{L}\\p{Nl}]|\\\\u\\h{4}|\\\\u{\\h+})(?:[$_\\p{L}\\p{Mn}\\p{Mc}\\p{Nd}\\p{Nl}\\p{Pc}\\x{200C}\\x{200D}]|\\\\u\\h{4}|\\\\u{\\h+})*+)\\s*+(?=(\\[(?:(?>[^\\[\\]]+)|\\\\g<-1>)*\\])?+\\s*+(<(?:(?>[^<>]+)|\\g<-1>)*>)?\\s*+\\()",
-          "end": "(?=.)",
-          "applyEndPatternLast": 1,
+          "end": ".",
           "beginCaptures": {
             "1": {
               "name": "keyword.operator.private.js"

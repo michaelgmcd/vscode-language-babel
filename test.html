@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      const sum = (x, y) => x < y;
+<script>
+  let a, b, c
+  foo()
+  foo.bar();
+  foo[a]()
+  document.element.a()
+  let a: foo = 'b'
+  foo?.bar?.baz()
 
-      function test() {
-        this.testVar = 'test';
-      }
+  const rootElement = document.createElement('div')
+  rootElement.id = 'root'
+  document.body.append(rootElement)
 
-      (function() {})();
-    </script>
-  </body>
-</html>
+  const helloWorldElement = document.createElement('div')
+  helloWorldElement.textContent = 'Hello World'
+  rootElement.append(helloWorldElement)
+</script>
