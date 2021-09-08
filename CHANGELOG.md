@@ -1,6 +1,11 @@
 # Change Log
 
+## 0.0.33 (August 18, 2021)
+
+- Feature: support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) (#92)
+
 ## 0.0.32 (August 18, 2021)
+
 - Fix: add support for createGlobalStyles as CSS (#90)
 
 ## 0.0.31 (April 3, 2021)
