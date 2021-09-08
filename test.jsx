@@ -45,6 +45,16 @@ const userType = gql`
   }
 `;
 
+const testingBracketColorization = {
+  nested: {
+    foo: {
+      bar: {
+        baz: 'baz',
+      }
+    }
+  }
+}
+
 
 class FlowTypeArguments extends React.Component<MyProps> {
   myRef = React.createRef<HTMLDivElement>();
