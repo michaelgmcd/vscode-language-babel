@@ -1,12 +1,16 @@
 # Change Log
 
+## 0.0.35 (September 8, 2021)
+
+- Fix: Update end captures to ensure JS highlighting ends in inline html (#91)
+
 ## 0.0.34 (September 7, 2021)
 
-- Feature: support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) in JSX (#92)
+- Feature: Support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) in JSX (#92)
 
 ## 0.0.33 (September 7, 2021)
 
-- Feature: support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) (#92)
+- Feature: Support [vscode's bracket colorization](https://code.visualstudio.com/updates/v1_60?WT.mc_id=devcloud-00000-cxa#_high-performance-bracket-pair-colorization) (#92)
 
 ## 0.0.32 (August 18, 2021)
 
