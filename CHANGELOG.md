@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.36 (January 31, 2022)
+
+- Feature: Support VSCode for Web (#97)
+
 ## 0.0.35 (September 8, 2021)
 
 - Fix: Update end captures to ensure JS highlighting ends in inline html (#91)
