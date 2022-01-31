@@ -5,6 +5,7 @@
   "version": "0.0.35",
   "publisher": "mgmcdermott",
   "main": "./dist/extension",
+  "browser": "./dist/web/extension",
   "engines": {
     "vscode": "^1.46.0"
   },
@@ -20,10 +21,14 @@
     "onCommand:javascript.reloadProjects"
   ],
   "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
+    "vscode:prepublish": "rm -rf dist && npm run package:web && npm run package:node",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "prettier": "prettier --write '**/*.{ts,tsx,css,md}' '**/*.{ts,tsx,css,md}'",
+    "web": "vscode-test-web --extensionDevelopmentPath=. .",
+    "watch:web": "webpack --watch",
+    "package:web": "webpack --mode production --devtool hidden-source-map",
+    "watch:node": "tsc -w -p ./",
+    "package:node": "tsc -p ./",
     "test": "vscode-tmgrammar-test -s source.js -g grammars/Babel-Language.json -t 'tests/*.js'"
   },
   "repository": {
@@ -169,12 +174,17 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^17.0.13",
     "@types/vscode": "^1.46.0",
+    "@vscode/test-web": "0.0.19",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.4",
     "prettier": "^1.16.4",
-    "typescript": "^3.3.3",
-    "vscode-tmgrammar-test": "0.0.5"
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "vscode-tmgrammar-test": "0.0.5",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   },
   "husky": {
     "hooks": {
