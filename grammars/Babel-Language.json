@@ -2586,15 +2586,18 @@
           ]
         },
         {
-          "match": "(((?<!\\.)\\s*+\\bmodule\\.((?<!\\,)exports|id|require|parent|filename|loaded|children)|exports))\\b",
+          "match": "(?<!\\.)\\s*+\\b(?:(exports)|(module)(?:(\\.)(exports|id|require|parent|children|filename|loaded))?)\\b",
           "captures": {
             "1": {
               "name": "support.type.object.module.js"
             },
             "2": {
-              "name": "keyword.operator.accessor.js"
+              "name": "support.type.object.module.js"
             },
             "3": {
+              "name": "keyword.operator.accessor.js"
+            },
+            "4": {
               "name": "support.type.object.module.js"
             }
           }
