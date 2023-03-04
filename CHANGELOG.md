@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.37 (March 4, 2023)
+
+- Fix: Remove < > bracket pairs in jsx languages (#111) (#112)
+
 ## 0.0.36 (January 31, 2022)
 
 - Feature: Support VSCode for Web (#97)
