@@ -5487,7 +5487,7 @@
               "name": "keyword.other.declare.flowtype"
             },
             "2": {
-              "name": "keyword.constrol.module.flowtype"
+              "name": "keyword.control.module.flowtype"
             },
             "3": {
               "name": "storage.type.class.flowtype"
