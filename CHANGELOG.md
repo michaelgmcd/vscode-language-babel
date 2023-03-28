@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.38 (March 28, 2023)
+
+- Fix: Fix typo in `declare class` scope ([mroch](https://github.com/mroch))
+
 ## 0.0.37 (March 4, 2023)
 
 - Fix: Remove < > bracket pairs in jsx languages (#111) (#112)
