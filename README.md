@@ -1,5 +1,7 @@
 # vscode-language-babel
 
+> Show your support by following me on Twitter [@michaelgmcd](https://twitter.com/intent/user?screen_name=michaelgmcd)
+
 JavaScript syntax highlighting for ES201x, React JSX, Flow and GraphQL.
 
 I highly recommend using this syntax highlighting with a theme that supports it.
