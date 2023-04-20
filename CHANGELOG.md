@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.39 (April 20, 2023)
+
+- Chore: Add sponsors to package.json
+
 ## 0.0.38 (March 28, 2023)
 
 - Fix: Fix typo in `declare class` scope ([mroch](https://github.com/mroch))
