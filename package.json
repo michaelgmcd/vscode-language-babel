@@ -9,6 +9,9 @@
   "engines": {
     "vscode": "^1.46.0"
   },
+  "sponsor": {
+    "url": "https://github.com/sponsors/michaelgmcd"
+  },
   "categories": [
     "Programming Languages"
   ],
