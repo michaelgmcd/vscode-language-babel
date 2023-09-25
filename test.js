@@ -45,6 +45,7 @@ const userType = gql`
   }
 `;
 
+const regex = /(?<foo>bar)/sd;
 
 class FlowTypeArguments extends React.Component<MyProps> {
   myRef = React.createRef<HTMLDivElement>();
