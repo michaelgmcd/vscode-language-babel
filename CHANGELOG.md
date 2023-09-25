@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.40 (September 25, 2023)
+
+- Fix: Support all regex flags (#103)
+- Chore: Update vscode and move to pnpm
+
 ## 0.0.39 (April 20, 2023)
 
 - Chore: Add sponsors to package.json
